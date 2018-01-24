@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+  font-family:'Montserrat',sans-serif;
+}
+
+h1 {
+  margin: 20px;
+  color: #00a07b;
+}
+
+.app {
+  display: flex;
+  flex-flow: row;
+}
+
+.txn {
+  width: 80%;
+  margin: 20px;
+}
+
+.campaign {
+  width: 20%;
+  margin: 10px;
+}
+
+.txn-table {
+  display: flex;
+  flex-flow: column nowrap;
+  font-size: .7rem;
+  margin: 0.5rem;
+  line-height: 1.5;
+  flex: 1 1 auto;
+}
+
+.txn-header {
+  display: none;
+  font-weight: 700;
+  background-color: #f2f2f2;
+}
+
+.txn-row {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.txn-row:nth-of-type(even) {
+  background-color: #f2f2f2;
+}
+
+.txn-row:nth-of-type(odd) {
+  background-color: #ffffff;
+}
+
+.txn-row:hover {
+  color: #00a07b;
+}
+
+.txn-data {
+  display: flex;
+  flex-flow: row nowrap;
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 0.5em;
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0px;
+  white-space: nowrap;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.half-txn-data {
+  display: flex;
+  flex-flow: row nowrap;
+  flex-grow: 1;
+  flex-basis: 0;
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0px;
+  white-space: nowrap;
+}
+
+.campaign-list {
+  background-color: #00a07b;
+  color: white;
+  margin-top: 5px;
+}
+
+.campaign-data {
+  padding: 0.5em;
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0px;
+  white-space: nowrap;
+}
