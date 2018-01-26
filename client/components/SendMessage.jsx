@@ -14,26 +14,33 @@ export default class SendMessage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      message: null, 
+      text : '', 
+      username : '', 
+      roomName : '', 
     }
     this.sendMessage = this.sendMessage.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this)
   }
 
-  componentDidMount() {
-
+  handleUpdate(e) {
+    e.preventDefault()
+    console.log('this in handleUpdate: ', e.target.name, e.target.value)
+    let name = e.target.name
+    let value = e.target.value
+    this.setState({[name]: value})
   }
+
 
   sendMessage(e) {
     e.preventDefault()
-
-
     axios.post('/api/addMessage', {
-      text : 'this is posting error'
-
+      text : this.state.text, 
+      username : this.state.username, 
+      roomName : this.state.roomName, 
     })
       .then((res) => {
-        let messages = res.data;
-        this.setState({ messages });
+        console.log('this is the state that was sent: ', this.state)
+        console.log('this was the response, ', res)
       })
       .catch((err) => console.log('error in sendMessage in SendMessage.jsx: ', err));
   } 
@@ -44,29 +51,35 @@ export default class SendMessage extends React.Component {
       <input
         type="text"
         placeholder="Username"
+        name="username"
         onChange={this.handleUpdate}
       />
       <input
         type="text"
+        name="text"
         placeholder="Message Text"
         onChange={this.handleUpdate}
       />
 
       <input
         type="text"
+        name="roomName"
         placeholder="Room Name"
         onChange={this.handleUpdate}
       />
 
       <input
         type="number"
+        name="timesToSend"
         placeholder="Times to Send (max = 10)"
         onChange={this.handleUpdate}
       />
       <button
         title = "Send Message"
         onClick={this.sendMessage}
-      />
+      > 
+        Send Message
+      </button>  
     </div> 
     );
   }

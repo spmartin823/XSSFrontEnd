@@ -28,13 +28,14 @@ export default class Messages extends React.Component {
     axios.get('/api/getAllMessages')
       .then((res) => {
         let messages = res.data.results;
-        this.setState({ messages });
+        this.setState({ messages }, () => {
+          setTimeout(() => this.getMessages(), 1000)
+        });
       })
       .catch((err) => console.log('error in getMessages in Messages.jsx: ', err));
   } 
 
   render() {
-    console.log('these are the messages: ', this.state.messages)
     return !this.state.messages 
     ? (<Loading />) 
     : (
