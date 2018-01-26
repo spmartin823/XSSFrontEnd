@@ -3,9 +3,8 @@ let path = require('path');
 const bodyParser = require('body-parser');
 const { 
         logger,   
-        getInvestmentData, 
-        getCampaignTerms, 
-        getAllCampaigns 
+        addMessage,
+        getAllMessages 
       } = require('./util')
 
 const app = express();
@@ -16,11 +15,8 @@ app.use(bodyParser.json());
 app.use(express.static(`${__dirname}/dist`));
 
 // Routes 
-// take campaignId in here so that the amount of data sent back and loaded for 
-// each page. 
-app.get('/api/investments/:campaignId', getInvestmentData);
-app.get('/api/campaign/:id', getCampaignTerms);
-app.get('/api/campaigns/', getAllCampaigns);
+app.post('/api/addMessage', addMessage);
+app.get('/api/getAllMessages', getAllMessages);
 
 // Fallback route for react router
 app.get('/*', (req, res) => res.sendFile(`${__dirname}/dist/index.html`) );
