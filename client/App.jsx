@@ -45,7 +45,7 @@ class App extends React.Component {
             <Route exact path='/' component={Messages} /> 
           </Switch> 
 
-         {/*} <Messages /> */}
+         {/*} <Messages /> 
 
           <div className="campaign">
               <h3>Navigation</h3>
@@ -61,9 +61,9 @@ class App extends React.Component {
                 <Link to={'/wiki'}>
                   <div className="campaign-data">XSS Wiki</div>
                 </Link>
-
               </div>
           </div> 
+        */}
         </div>
       </BrowserRouter>
     );

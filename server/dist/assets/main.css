@@ -21,22 +21,38 @@ h1 {
 
 .campaign {
   width: 20%;
-  margin: 10px;
+  margin: 20px;
 }
 
 .txn-table {
   display: flex;
   flex-flow: column nowrap;
-  font-size: .7rem;
+  font-size: .8rem;
   margin: 0.5rem;
   line-height: 1.5;
   flex: 1 1 auto;
+}
+
+.half-txn-data {
+  display: flex;
+  flex-flow: row nowrap;
+  flex-grow: 1;
+  flex-basis: 0;
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0px;
+  white-space: nowrap;
 }
 
 .txn-header {
   display: none;
   font-weight: 700;
   background-color: #f2f2f2;
+}
+
+.txn-header > .txn-data {
+  white-space: normal;
 }
 
 .txn-row {
@@ -71,22 +87,11 @@ h1 {
   border-bottom: 1px solid #d0d0d0;
 }
 
-.half-txn-data {
-  display: flex;
-  flex-flow: row nowrap;
-  flex-grow: 1;
-  flex-basis: 0;
-  word-break: break-word;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  min-width: 0px;
-  white-space: nowrap;
-}
 
 .campaign-list {
   background-color: #00a07b;
   color: white;
-  margin-top: 5px;
+  margin-top: 50px;
 }
 
 .campaign-data {
@@ -96,4 +101,54 @@ h1 {
   text-overflow: ellipsis;
   min-width: 0px;
   white-space: nowrap;
+}
+
+
+select {
+  float:right;
+  padding:8px 12px;
+  border:2px solid #78788c;
+  background:0;color:#5a5a6e;
+  cursor:pointer;
+  transition:all .3s;
+}
+
+input {
+  width:100%;
+  padding:10px;
+  box-sizing:border-box;
+  background:none;
+  outline:none;
+  resize:none;
+  border:0;
+  font-family:'Montserrat',sans-serif;
+  transition:all .3s;
+  border-bottom:2px solid #d0d0d0;
+}
+
+input:focus {
+  border-bottom:2px solid #00a07b;
+}
+
+button {
+  float:right;
+  padding:8px 12px;
+  margin:20px 0px 20px 0px;
+  border:2px solid #00a07b;
+  background:0;
+  color:black;
+  cursor:pointer;
+  transition:all .3s;
+}
+
+button:hover {
+  background:#00a07b;
+  color:#fff;
+  border: 2px solid #00a07b;
+}
+
+.campaign-form {
+  margin-top: 2px;
+  display: flex;
+  flex-flow: column;
 }
